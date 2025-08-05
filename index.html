@@ -1,61 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currency converter</title>
+    <title>Modern Currency Converter</title>
     <link rel="stylesheet" href="style.css">
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
 
-    <header><h1>Currency Converter</h1></header>
-    <div class="container">
-        <div class="header">
-           Currency Converter
-        </div>
-         <div class="input">
-                <input type="number" id="input" placeholder="Enter Amount">
-                
-            </div>
-            <div class="selections">
-                <div class="from">
-                    <div class="flag">
-                        <img src="https://flagsapi.com/PK/shiny/64.png" alt="">
-                    </div>
-                    <div class="currency">
-                        <select name=""  >
-                           
-                        </select>
-                    </div>
-                </div>
-                <div class="conversion">
-                    <i class="fa-solid fa-people-arrows"></i>
-                </div>
-                 <div class="to">
-                    <div class="flag">
-                        <img src="https://flagsapi.com/IN/shiny/64.png" alt="">
-                    </div>
-                    <div class="currency">
-                        <select name=""  >
-                           
-                        </select>
-                </div>
-             
-                </div>
-                   
-            </div>
-            <div class="result">
-
-            </div>
-            <button id="convert">
-                Convert Now
-            </button>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
     </div>
+
+    <div class="app-container">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h1>Currency Converter</h1>
+                </div>
+                <p class="subtitle">Real-time exchange rates at your fingertips</p>
+            </div>
+        </header>
+
+        <div class="converter-container">
+            <div class="converter-card">
+                <!-- Amount Input Section -->
+                <div class="input-section">
+                    <label for="input" class="input-label">
+                        <i class="fas fa-dollar-sign"></i>
+                        Amount
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="input" placeholder="Enter amount to convert" min="0" step="0.01">
+                    </div>
+                </div>
+
+                <!-- Currency Selection Section -->
+                <div class="currency-section">
+                    <div class="currency-row">
+                        <div class="currency-item from-currency">
+                            <label class="currency-label">From</label>
+                            <div class="currency-selector">
+                                <div class="flag-container">
+                                    <img src="https://flagsapi.com/PK/shiny/64.png" alt="Flag" class="flag-img">
+                                </div>
+                                <select class="currency-select" data-index="0">
+                                    <!-- Options will be populated by JavaScript -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="swap-container">
+                            <button class="swap-btn" id="swap-currencies">
+                                <i class="fas fa-exchange-alt"></i>
+                            </button>
+                        </div>
+
+                        <div class="currency-item to-currency">
+                            <label class="currency-label">To</label>
+                            <div class="currency-selector">
+                                <div class="flag-container">
+                                    <img src="https://flagsapi.com/IN/shiny/64.png" alt="Flag" class="flag-img">
+                                </div>
+                                <select class="currency-select" data-index="1">
+                                    <!-- Options will be populated by JavaScript -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Convert Button -->
+                <button id="convert" class="convert-btn">
+                    <span class="btn-text">Convert Now</span>
+                    <div class="btn-loader">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </button>
+
+                <!-- Result Section -->
+                <div class="result-section">
+                    <div class="result-card">
+                        <div class="result-content">
+                            <!-- Result will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Powered by real-time exchange rates • Built with ❤️</p>
+        </footer>
+    </div>
+
     <script src="list.js"></script>
-<script src="script.js"></script>
-
-
+    <script src="script.js"></script>
 </body>
-    
+
 </html>
